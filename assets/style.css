@@ -1,0 +1,281 @@
+:root {
+  --black: #333333;
+  --white: #edeef6;
+  --blue: #92cbcd;
+  /* --blue: #dce7eb; */
+  --gray: #32343d;
+  --lightblue: #445877;
+  --borderRadius: 5px;
+}
+/* style main body */
+body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  background-color: var(--white);
+  color: var(--lightblue);
+}
+
+/* style header */
+
+header {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px 10px;
+  grid-template-areas: "hImg headerH1 headerNav headerNav headerNav" "hImg headerH1 headerNav headerNav headerNav";
+
+  /* display: flex; */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--gray);
+  padding: 1%;
+}
+header img {
+  grid-area: hImg;
+}
+header h1 {
+  grid-area: headerH1;
+  font-size: 200%;
+  background-color: var(--blue);
+  text-align: center;
+  border-radius: var(--borderRadius);
+}
+header h1 a {
+  color: var(--gray);
+  text-align: center;
+  padding: 10px;
+  margin-left: 30px;
+}
+
+nav {
+  grid-area: headerNav;
+  font-size: 200%;
+}
+nav ul li {
+  display: inline;
+  padding: 10px;
+  margin: auto;
+}
+nav ul li a {
+  color: var(--blue);
+  padding: 5px;
+  border-bottom: 5px solid var(--blue);
+}
+/* style main */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  flex: 1 1 0;
+  margin: 10px;
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  font-size: 200%;
+  border-right: 10px solid var(--lightblue);
+}
+/* style subtitle */
+.subtitle {
+  display: grid;
+  /* grid-template-columns: repeat(5, minmax(200px, 1fr)); */
+  grid-template-columns: repeat(5, auto);
+  /* grid-template-rows: repeat(1, auto); */
+  grid-template-areas: ". .  subtitleH subtitleH .";
+  gap: 10px 10px;
+  margin: 20px 0 0 10px;
+  padding: 10px;
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1 1 0; */
+  /* justify-content: end;
+  align-items: end; */
+  background-image: url(./images/photo-1523821741446-edb2b68bb7a0.avif);
+  background-color: #cccccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: var(--borderRadius);
+}
+
+.subtitle h1 {
+  grid-area: subtitleH;
+  background-color: var(--blue);
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  font-size: 200%;
+  border-radius: var(--borderRadius);
+  transition: all 0.4s;
+}
+.subtitle h1:hover {
+  transform: scale(1.1);
+}
+
+/* style section-about-me */
+.about-me {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  grid-template-rows: repeat(2, auto);
+  gap: 10px 10px;
+  grid-template-areas: "aboutMeH2 aboutMe1 aboutMe1 aboutMe1 aboutMe1" "aboutMeH2 aboutMe2 aboutMe2 aboutMe2 aboutMe2";
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.about-me h2 {
+  grid-area: aboutMeH2;
+}
+.about-me p {
+  justify-content: left;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: #dce7eb;
+  border-radius: var(--borderRadius);
+}
+.about-me1 {
+  grid-area: aboutMe1;
+}
+.about-me2 {
+  grid-area: aboutMe2;
+}
+
+/* style section-work */
+.work {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  grid-template-rows: repeat(7, minmax(100px, 1fr));
+  gap: 10px 10px;
+  grid-template-areas: "workH work1 work1 work1 work1" "workH work1 work1 work1 work1" "workH work1 work1 work1 work1" "workH work2 work2 work3 work3" "workH work2 work2 work3 work3" "workH work4 work4 work5 work5" "workH work4 work4 work5 work5";
+  margin: 20px;
+  padding: 20px;
+}
+
+.work h2 {
+  grid-area: workH;
+}
+
+.work card {
+  position: relative;
+  background-color: lightblue;
+  border: 5px solid var(--blue);
+  background-size: cover;
+  opacity: 75%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: var(--borderRadius);
+  transition: all 0.4s;
+}
+.work card:hover {
+  opacity: 100%;
+  transform: scale(1.1);
+}
+
+.work1 {
+  grid-area: work1;
+  background-image: url("./images/digital-marketing-meeting.jpg");
+}
+.work2 {
+  grid-area: work2;
+  background-image: url("./images/CSS-snippet-cheat-sheet.png");
+}
+
+.work3 {
+  grid-area: work3;
+  background-image: url("./images/Calculator.jpg");
+}
+
+.work4 {
+  grid-area: work4;
+  background-image: url("./images/Puzzels.jpg");
+}
+
+.work5 {
+  grid-area: work5;
+  background-image: url("./images/two_runners.jpg");
+}
+.work1 a,
+.work2 a,
+.work3 a,
+.work4 a,
+.work5 a {
+  position: absolute;
+  background-color: #92cbcd;
+  color: black;
+  padding: 10px;
+  left: 10px;
+  bottom: 10px;
+  border-radius: var(--borderRadius);
+}
+
+/* style contact-me/footer */
+footer {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  gap: 10px;
+  grid-template-areas: "contactMe phone email gitHub backToTop";
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+}
+footer p {
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  font-size: 200%;
+  border-radius: var(--borderRadius);
+  border-bottom: 5px solid var(--lightblue);
+}
+.contact-me {
+  grid-area: contactMe;
+}
+.phone {
+  grid-area: phone;
+}
+.email {
+  grid-area: email;
+}
+.gitHub {
+  grid-area: gitHub;
+}
+.back-to-top {
+  grid-area: backToTop;
+}
+
+/* media-queries */
+
+@media screen and (max-width: 1200px) {
+  header {
+    grid-template-columns: repeat(5, auto);
+    grid-template-areas: "hImg headerH1 headerH1 headerH1 ." "hImg headerNav headerNav headerNav .";
+  }
+}
+@media screen and (max-width: 1100px) {
+  .about-me {
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "aboutMeH2 aboutMe1 aboutMe1 aboutMe1" "aboutMeH2 aboutMe2 aboutMe2 aboutMe2";
+  }
+  .work {
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-template-rows: repeat(5, minmax(200px, 1fr));
+
+    grid-template-areas: "workH work1 work1 work1" "workH work2 work2 work2" "workH work3 work3 work3" "workH work4 work4 work4" "workH work5 work5 work5";
+  }
+  footer {
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "contactMe phone phone email email" "contactMe gitHub gitHub backToTop backToTop";
+  }
+}
